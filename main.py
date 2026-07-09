@@ -386,4 +386,22 @@ def main():
     application.run_polling()
 
 if __name__ == '__main__':
-    main()
+    if __name__ == '__main__':
+    import os
+    from dotenv import load_dotenv
+    
+    load_dotenv()
+    TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+    
+    if not TOKEN:
+        print("❌ Ошибка: установите TELEGRAM_BOT_TOKEN")
+        exit(1)
+    
+    app = Application.builder().token(TOKEN).build()
+    
+    # Добавите обработчики
+    conv_handler = ConversationHandler(...)  # (весь ваш код)
+    app.add_handler(conv_handler)
+    
+    print("🤖 Бот запущен...")
+    app.run_polling()
