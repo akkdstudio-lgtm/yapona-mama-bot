@@ -2,7 +2,10 @@ import logging
 import os
 import sqlite3
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
-from telegram.ext import Application, CommandHandler, MessageHandler, CallbackQueryHandler, ConversationHandler, filters, ContextTypes
+from telegram.ext import (
+    Application, CommandHandler, MessageHandler, 
+    CallbackQueryHandler, ConversationHandler, filters, ContextTypes
+)
 from datetime import datetime
 import json
 
